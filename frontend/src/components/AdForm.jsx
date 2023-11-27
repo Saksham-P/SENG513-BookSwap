@@ -25,14 +25,14 @@ const AdForm = () => {
   const [priceEnabled, setPriceEnabled] = useState(true);
 
   const categoryOptions = [
-    { value: 'business', label: 'Business' },
-    { value: 'computerScience', label: 'Computer Science' },
-    { value: 'education', label: 'Education' },
-    { value: 'engineering', label: 'Engineering' },
-    { value: 'law', label: 'Law' },
-    { value: 'math', label: 'Mathematics' },
-    { value: 'medicine', label: 'Medicine' },
-    { value: 'naturalScience', label: 'Natural Science' }
+    { value: 'Business', label: 'Business' },
+    { value: 'Computer Science', label: 'Computer Science' },
+    { value: 'Education', label: 'Education' },
+    { value: 'Engineering', label: 'Engineering' },
+    { value: 'Law', label: 'Law' },
+    { value: 'Mathematics', label: 'Mathematics' },
+    { value: 'Medicine', label: 'Medicine' },
+    { value: 'Natural Science', label: 'Natural Science' }
   ];
 
   const radioChanged = (e) => {
@@ -128,8 +128,10 @@ const AdForm = () => {
         <div className="ad_side">
           <Select 
             options={categoryOptions}
-            onChange={(e) => setCategory(e.value)}
-            value={category}
+            onChange={(e) => setCategory(e.label)}
+            value={categoryOptions.filter(function(opt) {
+              return opt.value === category;
+            })}
             className={emptyFields.includes('category') ? 'react-select-container select_field field_error' : 'react-select-container select_field'}
             classNamePrefix="react-select"
             placeholder="Select Category"
