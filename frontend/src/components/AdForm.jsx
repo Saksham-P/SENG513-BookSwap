@@ -44,7 +44,6 @@ const AdForm = () => {
     e.preventDefault();
 
     const ad = {title, description, files, category, location, tags, price, swapBook};
-
     const response = await fetch('http://localhost:4000/api/ads', {
       method: 'POST',
       body: JSON.stringify(ad),
@@ -54,7 +53,6 @@ const AdForm = () => {
     });
 
     const json = await response.json();
-
     if (!response.ok) {
       console.log("error", json);
       setError(json.error);
@@ -128,10 +126,10 @@ const AdForm = () => {
         <div className="ad_side">
           <Select 
             options={categoryOptions}
-            onChange={(e) => setCategory(e.value)}
-            value={categoryOptions.filter(function(opt) {
-              return opt.value === category;
-            })}
+            onChange={(e) => {
+               setCategory(e.label);
+              }
+            }
             className={emptyFields.includes('category') ? 'react-select-container select_field field_error' : 'react-select-container select_field'}
             classNamePrefix="react-select"
             placeholder="Select Category"
