@@ -128,7 +128,7 @@ const AdForm = () => {
         <div className="ad_side">
           <Select 
             options={categoryOptions}
-            onChange={(e) => setCategory(e.label)}
+            onChange={(e) => setCategory(e.value)}
             value={categoryOptions.filter(function(opt) {
               return opt.value === category;
             })}

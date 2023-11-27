@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Listing.css'
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Book1 from '../../assets/book1.jpg'
@@ -12,16 +12,20 @@ import { MdOutlineEmail } from "react-icons/md";
 
 
 
-export default function Listing({id}) {
+export default function Listing({ad}) {
+  useEffect(() => {
+  },[])
+
+
   return (
     <div className='listing-container'>
 
       <div className='listing-directory'>Home &gt; Calgary &gt; Philosophy Textbooks &gt; Under $60</div>
 
-      <div className='listing-title'>PHIL 399 Textbook - Good Condition</div>
+      <div className='listing-title'>{ad.title}</div>
 
       <div className='price-location-container'>
-        <div className='listing-price'>$50.00</div>
+        <div className='listing-price'>{`$${ad.price}.00`}</div>
         <div className='map-icon'>
           <FaMapMarkerAlt color='grey' size={24}/>
         </div>

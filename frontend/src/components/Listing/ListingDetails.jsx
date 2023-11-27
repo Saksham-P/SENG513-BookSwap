@@ -4,11 +4,11 @@ import './ListingDetails.css'
 import ListingCreator from './ListingCreator'
 import ListingDescription from './ListingDescription'
 
-export default function ListingDetails() {
+export default function ListingDetails({ad}) {
   return (
     <div className='details-container'>
-      <ListingCreator/>
-      <ListingDescription/>
+      <ListingCreator ad={ad}/>
+      <ListingDescription ad={ad}/>
     </div>
   )
 }

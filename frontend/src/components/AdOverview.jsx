@@ -1,8 +1,10 @@
 import { useAdsContext } from "../hooks/useAdsContext";
 import './AdOverview.css';
+import { useNavigate } from "react-router-dom";
 
 const AdOverview = ({ ad }) => {
   const { dispatch } = useAdsContext();
+  const navigate = useNavigate()
 
   const handleDelete = async () => {
     const response = await fetch('http://localhost:4000/api/ads/' + ad._id, {
@@ -16,8 +18,12 @@ const AdOverview = ({ ad }) => {
     }
   }
 
+  const handleAdClick = () => {
+    navigate(`../listings/${ad._id}`)
+  };
+
   return (
-    <div className="ad_overview">
+    <div className="ad_overview" onClick={handleAdClick}>
       <div className="ad_image">
         <img src="https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg" alt="not available"></img>
       </div>
@@ -26,7 +32,7 @@ const AdOverview = ({ ad }) => {
         <h3>${ad.price}</h3>
         <h4>{ad.description}</h4>
         <p>{ad.createdAt}</p>
-        <span onClick={handleDelete}>Test Delete Ad</span>
+        <button onClick={handleDelete}>Test Delete Ad</button>
       </div>
     </div>
   )
