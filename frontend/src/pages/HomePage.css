@@ -9,7 +9,8 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 400px; /* Increase the height of the hero image if needed here */
+    height: 400px;
+    /* Increase the height of the hero image if needed here */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,19 +20,22 @@
 
 .hero-text {
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better readability */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay for better readability */
     padding: 20px;
     border-radius: 10px;
 
     position: relative;
-    z-index: 2; /* Ensure the text is above the overlay */
+    z-index: 2;
+    /* Ensure the text is above the overlay */
 }
 
 /* Features Section */
 .features-section {
     padding: 2rem;
     text-align: center;
-    background-color: #f9f9f9; /* Light grey background for contrast */
+    background-color: #f9f9f9;
+    /* Light grey background for contrast */
 }
 
 .features-section h2 {
@@ -100,7 +104,8 @@
 .cta-section {
     text-align: center;
     padding: 2rem;
-    background-color: #fff; /* White background for a clean look */
+    background-color: #fff;
+    /* White background for a clean look */
 }
 
 .cta-section h2 {
@@ -121,7 +126,8 @@
     margin: 0.5rem;
     border: none;
     border-radius: 5px;
-    background-color: var(--button_background); /* Primary button color */
+    background-color: var(--button_background);
+    /* Primary button color */
     color: white;
     font-weight: 700;
     text-decoration: none;
@@ -130,7 +136,8 @@
 
 .btn-register:hover,
 .btn-browse:hover {
-    background-color: #003d82; /* Darker shade for hover state */
+    background-color: #003d82;
+    /* Darker shade for hover state */
 }
 
 /* Added dark overlay for landing page image so text is easier to read */
@@ -140,6 +147,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-    z-index: 1; /* Ensure it's above the background image but below the text */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with 50% opacity */
+    z-index: 1;
+    /* Ensure it's above the background image but below the text */
+}
+
+@media only screen and (max-width: 500px) {
+
+    /* Call to Action Section */
+    .cta-section {
+        display: flex;
+        flex-direction: column;
+    }
 }
